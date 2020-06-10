@@ -7,13 +7,16 @@
 //* El codigo permita verificar como se puede bloquear 
 // un hilo para que otro se ejecute completamenta
 //Preguntas
+//
 //a.	¿Qué encontró al ejecutar dos veces el programa?
 //Se puede observar que inicia el hilo principal al llamar al hilo trabajador el 
 //    principal queda a la espera que hilo trabajador finalice y continua.
+//
 //b.  ¿Es el resultado el mismo al del código anterior Practica01b?
 //No, ya que en el código anterior la primera pausa del método ImprimirNumerosConRetardo() 
 //hacia que la ejecución del principal se ejecutara, mientras que en este caso se 
 //bloquea el hilo principal permitiendo que el hilo trabajador se ejecute por completo.
+//
 //c.Qué sucede si comenta la línea hiloTrabajador.Join()? Explique claramente qué
 //sucede en este caso?
 //En este caso el hilo principal no espera a que se termine la ejecución del hilo 
