@@ -6,6 +6,19 @@
 // Resultados:
 //* El codigo permita visualizar como se asigna el quantum
 // a cada hilo
+//Preguntas:
+//a.	¿Qué encontró al ejecutar dos veces el programa?
+//En cada ejecución se generan resultados aleatorios y tanto el resultado del hilo
+//como el método ImprimirNumeros() por si solo se cruzan en el tiempo
+//
+//b.  ¿Es el resultado el mismo? Explique el por qué
+//Debido a que los hilos tienen un tiempo en el procesador el momento en que el tiempo 
+//se termina entra el método ImprimirNumeros() y se ejecutan alternadamente el método y el hilo.
+//
+//c.Qué sucede si cambia la línea ImprimirNúmeros(); antes de la creación del hilo?
+//Se ejecutará primero el método sin interrupción y de igual manera el hilo al no tener nada que 
+//lo interrumpa se ejecutará a la vista del usuario continuamente sin embargo respetará cada quantum
+
 // Conclusiones:
 //*
 // Recomendaciones:
