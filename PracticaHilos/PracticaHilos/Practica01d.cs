@@ -6,6 +6,12 @@
 // Resultados:
 //* El codigo permita verificar como se puede bloquear 
 // un hilo para que otro se ejecute completamenta
+//Preguntas
+//a. Explique claramente qué sucede en este caso.
+// Al empezar el programa se instancia hilo trabajador, y se ejecuta una
+//pausa de 6 segundos en los cuales el hilo trabajador esta vivo al finalizar la 
+//espera el hilo finaliza su ejecucion sin terminar la tarea programa esto da paso
+//a la creacion del segundo hilo, este por su parte ejecuta la accion completa
 // Conclusiones:
 //*
 // Recomendaciones:
