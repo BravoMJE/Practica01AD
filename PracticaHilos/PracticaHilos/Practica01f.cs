@@ -46,7 +46,7 @@ namespace PracticaHilos
             hiloUno.Start();
             hiloDos.Start();
 
-            Console.ReadLine();
+
         }
 
 

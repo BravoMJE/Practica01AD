@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PracticaHilos.Practica01f</StartupObject>
+    <StartupObject>PracticaHilos.Practica01h</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,6 +52,8 @@
     <Compile Include="Practica01d.cs" />
     <Compile Include="Practica01e.cs" />
     <Compile Include="Practica01f.cs" />
+    <Compile Include="Practica01g.cs" />
+    <Compile Include="Practica01h.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
