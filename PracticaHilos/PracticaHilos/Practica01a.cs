@@ -3,7 +3,7 @@
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
-// Resultados:
+// Resultados: 
 //* El codigo permita visualizar como se asigna el quantum
 // a cada hilo
 //Preguntas:
