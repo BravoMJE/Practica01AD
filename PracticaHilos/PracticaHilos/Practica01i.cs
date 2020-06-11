@@ -27,6 +27,8 @@ namespace PracticaHilos
                     Console.WriteLine("Temporizador no se cumple!");
                 }
             }
+
+
             Console.WriteLine("----");
             new Thread(() => DemasiadosBloqueos(bloqueo1, bloqueo2)).Start();
             lock (bloqueo2)
@@ -46,14 +48,13 @@ namespace PracticaHilos
         }
         static void DemasiadosBloqueos(object bloqueo1, object bloqueo2)
         {
-           
-                lock (bloqueo1)
+
+            lock (bloqueo1)
             {
-                lock (bloqueo2)
                 Thread.Sleep(1000);
-               
+                lock (bloqueo2) ;
             }
-            
+
         }
 
         static void Prueba(ContadorBase c)
