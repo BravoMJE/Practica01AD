@@ -1,11 +1,12 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
 // Resultados:
-//* El codigo permita verificar como se puede bloquear 
-// un hilo para que otro se ejecute completamenta
+//* El codigo permite visualizar como es posible que dos hilos
+// se ejecuten al mismo tiempo haciendo que uno permanezca en 
+//primer plano y enviando al otro a segundo plano
 //Preguntas
 //Explique claramente qué sucede en este caso
 //La clase EjemploHilo nos permite instanciar un objeto de tipo EjemploHilo 
@@ -33,14 +34,18 @@ namespace PracticaHilos
         static void Main(string[] args)
         {
 
+            //Instancia de los dos objetos de la clase EjemploHilo
 
             var hiloForeground = new EjemploHilo(10);
             var hiloBackground = new EjemploHilo(20);
 
             var hiloUno = new Thread(hiloForeground.Contar); 
+            //Asignacion de nombre a hiloUno
             hiloUno.Name = "hilo Foreground"; 
             var hiloDos = new Thread(hiloBackground.Contar); 
-            hiloDos.Name = "hilo Background"; 
+            hiloDos.Name = "hilo Background";
+            
+            //Enviamos al hiloDos a segundo plano
             hiloDos.IsBackground = true;
 
             hiloUno.Start();
@@ -54,13 +59,20 @@ namespace PracticaHilos
     }
 
 
+
+    //Clase EjemploHilo
     class EjemploHilo{
         private readonly int numIteraciones;
 
+
+        //Constructor de la clase
         public EjemploHilo(int iteraciones) { 
             numIteraciones = iteraciones; 
         }
 
+
+        //Metodo contar que nos imprimira por consola el nombre del hilo en ejecucion
+        //y el numero de iteracion correspondiente
         public void Contar()
         {
             for (int i = 0; i < numIteraciones; i++)

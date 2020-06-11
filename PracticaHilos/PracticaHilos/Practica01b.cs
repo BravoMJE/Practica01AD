@@ -1,13 +1,13 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
 // Resultados:
-//* El codigo permita visualizar como se asigna el quantum
-// a cada hilo
+//* El codigo permita visualizar como se puede pausar un hilo
+//para que otro pueda ejecutarse 
 //
-//a.	¿Qué encontró al ejecutar dos veces el programa?
+//a.    ¿Qué encontró al ejecutar dos veces el programa?
 //Se obtuvo resultados similares en cada ejecución con un resultado claro cuando el 
 //hiloTrabajador entra a la pausa da tiempo a que el hilo principal ejecute el método ImprimirNumeros().
 //
@@ -21,10 +21,12 @@
 //principal muestre todos los números seguidos sin interrupción.
 
 // Conclusiones:
-//* ASDFGHJKL
+//* 
 // Recomendaciones:
 //*
 // ************************************************************************
+
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,7 +40,7 @@ namespace PracticaHilos
 
         static void Main(string[] args)
         {
-            //Creacion de hilo este ejecutara el metodo ImprimirNumeros
+            //Creacion de hilo este ejecutara el metodo ImprimirNumerosConRetardo
             Thread hiloTrabajador = new Thread(delegate () { ImprimirNumerosConRetardo(); });
             hiloTrabajador.Start();
 

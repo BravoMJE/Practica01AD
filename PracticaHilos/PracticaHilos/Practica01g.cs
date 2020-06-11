@@ -1,5 +1,5 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
@@ -7,6 +7,10 @@
 //* El codigo permite visualizar las diferentes formas de pasar parametros a un Hilo
 //Preguntas
 //Explique claramente qué sucede en este caso
+//En este ejercicio se puede visualizar como se puede hacer el paso de parametros
+//a un hilo de maneras diferentes desde el paso a un objeto como tal que va a 
+//ejecutar un metodo dentro de nuestro hilo y uso de expresiones lambda todas 
+// las maneras citas tienen la misma funcionalidad
 // Conclusiones:
 //*
 // Recomendaciones:
@@ -26,18 +30,23 @@ namespace PracticaHilos
         static void Main(string[] args)
         {
 
+            //Paso de parametros por medio del atributo del objeto
             var ejemplo = new HiloEjemplo(10);
             var hiloUno = new Thread(ejemplo.Contar);
             hiloUno.Name = "hilo Primero";
             hiloUno.Start();
             hiloUno.Join();
             Console.WriteLine("------");
+
+            //Paso de parametros por medio del metodo .Start()
             var hiloDos = new Thread(Contar);
             hiloDos.Name = "hilo Dos"; 
             hiloDos.Start(8); 
             hiloDos.Join(); 
             Console.WriteLine("------");
 
+
+            //Paso de parametros por expresiones lambda
             var hiloTres = new Thread(() => ContarNumeros(12)); 
             hiloTres.Name = "hilo Tres"; 
             hiloTres.Start(); 
@@ -62,6 +71,8 @@ namespace PracticaHilos
 
         }
 
+
+        //Nos mostrara el nombre del hilo y el numero de la iteracion
         static void ContarNumeros(int iteraciones)
         {
 
@@ -72,6 +83,7 @@ namespace PracticaHilos
 
         }
 
+        //imprime por consola el valor ingresado
         static void ImprimirNumeros(int numero) { 
             Console.WriteLine(numero); 
         }
@@ -81,6 +93,8 @@ namespace PracticaHilos
 
     }
 
+
+    //clase HiloEjemplo
     class HiloEjemplo
     {
         private readonly int numIteraciones;
@@ -90,6 +104,8 @@ namespace PracticaHilos
             numIteraciones = iteraciones;
         }
 
+
+        //Nos mostrara el nombre del hilo y el numero de la iteracion
         public void Contar()
         {
             for (int i = 0; i < numIteraciones; i++)

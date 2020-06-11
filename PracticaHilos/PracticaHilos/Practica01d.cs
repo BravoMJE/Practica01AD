@@ -1,11 +1,11 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
 // Resultados:
-//* El codigo permita verificar como se puede bloquear 
-// un hilo para que otro se ejecute completamenta
+//* El codigo permite abortar cualquier hilo en un instante determinado
+//lo que termina su ejecucion en el momento en que se ejecuta
 //Preguntas
 //a. Explique claramente qué sucede en este caso.
 // Al empezar el programa se instancia hilo trabajador, y se ejecuta una
@@ -38,9 +38,13 @@ namespace PracticaHilos
             hiloTrabajador.Start();
 
             Thread.Sleep(TimeSpan.FromSeconds(6));
+
+            //Nos permite abortar la ejecucion de un hilo
             hiloTrabajador.Abort();
             Console.WriteLine("El hilo trabajador ha abortado");
 
+            //Instancia de un segunfo hilo este seguira funcionando a pesar de la 
+            //operacion de aborto de el hiloTrabajador
             Thread hiloTrabajador2 = new Thread(ImprimirNumeros);
             hiloTrabajador2.Start();
 
@@ -50,11 +54,11 @@ namespace PracticaHilos
         }
 
 
-        //Metodo que imprime numeros del 1 a 50
+        //Metodo que imprime numeros del 1 a 10
         //e incluye una pausa de 2 segundos con cada iteracion
         static void ImprimirNumerosConRetardo()
         {
-            Console.WriteLine("Empezando …. Retardo");
+            Console.WriteLine("Empezando ….");
             for (int i = 1; i < 10; i++)
             {
                 Thread.Sleep(TimeSpan.FromSeconds(2));

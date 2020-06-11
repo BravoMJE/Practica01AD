@@ -1,5 +1,5 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020

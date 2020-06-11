@@ -1,19 +1,23 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
 // Resultados:
-//* El codigo permita verificar como se puede bloquear 
-// un hilo para que otro se ejecute completamenta
+//* El codigo permita verificar como se pueden alterar los resultados
+// si no se bloquean los elementos de los que se hace uso y asi no obtener
+//resultados incorrectos o inesperados
 //Preguntas
 //Explique claramente qué sucede en este caso
-//La clase EjemploHilo nos permite instanciar un objeto de tipo EjemploHilo 
-//que en su constructor unicamente recibe un entero que sera el numero de veces
-//que cada hilo imprimira su nombre y el numero de iteracion correspondiente
-//hiloUno.name establece un nombre a un hilo lo que nos permitira identificarlo
-//finalmente con hiloDos.IsBackground = true se habilita al hilo para que 
-//se ejecute en segundo plano, los dos hilos se ejecutaran al mismo tiempo
+//Este codigo nos presenta dos metodos principales contador y contador con bloqueo
+//con lo dicen sus nombre uno bloquea los elementos dentro de el para que no puedan
+//ser modificados mientras el hilo en curso no ha terminado su ejecucion
+//para ello se crearan 3 hilos para ejecutar cada metodo los metodos contador y contador
+//con bloqueo incremetaran y decrementaran una variable en el mismo metodo por lo que de 
+// hacerlo un solo hilo el resultado seria 0 en los resultados se puede observar que contador
+//nos arroja un numero muy alto lo que quiere decir que los 2 hilos restantes
+//alteraron el resultado esperado
+//Observar que en el metodo sin bloqueo e
 // Conclusiones:
 //*
 // Recomendaciones:
@@ -33,6 +37,8 @@ namespace PracticaHilos
         static void Main(string[] args)
         {
 
+
+            //Instancia e inicializacion de los 3 hilos para contador
             Console.WriteLine("Contador Incorrecto"); 
             var c = new Contador(); 
             var t1 = new Thread(() => Prueba(c)); 
@@ -45,11 +51,18 @@ namespace PracticaHilos
             t2.Join(); 
             t3.Join();
 
+
+            //Muestro los resultados obtenidos por el contador 
+            //lo que mostrara un resultado incorrecto al no estar bloqueado
             Console.WriteLine("Cuenta Total: {0}", c.Contar); 
             Console.WriteLine("------");
 
             Console.WriteLine("Contador correcto");
 
+
+
+
+            //Instancia e inicializacion de los 3 hilos para contadorConBloque
             var c1 = new ContadorConBloqueo();
 
             var t4 = new Thread(() => Prueba(c1)); 
@@ -61,6 +74,9 @@ namespace PracticaHilos
             t4.Join(); 
             t5.Join(); 
             t6.Join(); 
+
+            //Muestra los resultados esperados para este ejercicio el resiltado
+            //correcto seria 0
             Console.WriteLine("Cuenta Total: {0}", c1.Contar); 
             Console.WriteLine("------");
 
@@ -68,6 +84,8 @@ namespace PracticaHilos
         }
 
 
+
+        //Aumenta y decrementa la variable el resultado ideal sera 0
         static void Prueba(ContadorBase c)
         {
 
@@ -80,6 +98,8 @@ namespace PracticaHilos
         }
 
 
+        //contrador sin bloqueo metodos Incrementar aumenta contar en una unidad
+        //metodo decrementar contar en una unidad 
         class Contador : ContadorBase
         {
             public int Contar { get; private set; }
@@ -97,7 +117,10 @@ namespace PracticaHilos
 
 
 
-
+        //contrador sin bloqueo metodos Incrementar aumenta contar en una unidad
+        //metodo decrementar contar en una unidad 
+        //el aumentar o decrementar esta bloqueado lo que nos permite obtener los 
+        //resultados esperados
         class ContadorConBloqueo : ContadorBase
         {
             private readonly object objetoSincronizador = new Object();

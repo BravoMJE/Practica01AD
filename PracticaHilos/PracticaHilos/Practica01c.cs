@@ -1,5 +1,5 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
@@ -42,7 +42,7 @@ namespace PracticaHilos
 
         static void Main(string[] args)
         {
-            //Creacion de hilo este ejecutara el metodo ImprimirNumeros
+            //Creacion de hilo este ejecutara el metodo ImprimirNumerosConRetardo
             Console.WriteLine("Empezando");
             Thread hiloTrabajador = new Thread(delegate () { ImprimirNumerosConRetardo(); });
             hiloTrabajador.Start();
@@ -51,15 +51,11 @@ namespace PracticaHilos
             hiloTrabajador.Join();
             Console.WriteLine("Ejecucion del hilo principal finalizada");
 
-            //Llamada al metodo ImprimirNumeros que nos permitira ver
-            //la asignacion de tiempos del procesador
-            //ImprimirNumeros();
-
             Console.ReadLine();
         }
 
 
-        //Metodo que imprime numeros del 1 a 50
+        //Metodo que imprime numeros del 1 a 10
         //e incluye una pausa de 2 segundos con cada iteracion
         static void ImprimirNumerosConRetardo()
         {

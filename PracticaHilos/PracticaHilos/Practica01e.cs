@@ -1,11 +1,11 @@
 ﻿// ************************************************************************
-// Practica 01
+// Deber 02
 // Joseph Bravo, Esteban Machado
 // Fecha de realizacion: 04/06/2020
 // Fecha de entrega: 08/06/2020
 // Resultados:
-//* El codigo permita verificar como se puede bloquear 
-// un hilo para que otro se ejecute completamenta
+//* El codigo permita verificar el estado de un hilo en un 
+// momento determinado 
 //Preguntas
 //Explique claramente qué sucede en este caso
 //Al instanciar los dos hilos y no iniciarlos aun al ejecutar thread state
