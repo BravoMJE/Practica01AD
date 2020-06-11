@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PracticaHilos.Practica01g</StartupObject>
+    <StartupObject>PracticaHilos.Practica01i</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

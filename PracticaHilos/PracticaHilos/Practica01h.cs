@@ -17,7 +17,6 @@
 // hacerlo un solo hilo el resultado seria 0 en los resultados se puede observar que contador
 //nos arroja un numero muy alto lo que quiere decir que los 2 hilos restantes
 //alteraron el resultado esperado
-//Observar que en el metodo sin bloqueo e
 // Conclusiones:
 //*
 // Recomendaciones:
