@@ -21,7 +21,7 @@
 //principal muestre todos los números seguidos sin interrupción.
 
 // Conclusiones:
-//*
+//* ASDFGHJKL
 // Recomendaciones:
 //*
 // ************************************************************************
